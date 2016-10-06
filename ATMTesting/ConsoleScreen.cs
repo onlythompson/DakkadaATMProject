@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ATMTesting
 {
-    public class ATMScreen : IScreen
+    public class ConsoleScreen : IScreen
     {
         public void Display(string info)
         {

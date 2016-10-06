@@ -9,15 +9,23 @@ namespace ATM.Domain
     public class AutomatedTellerMachine
     {
         public IScreen screen;
+        public IKeypad keypad;
         CashDispenser dispenser;
         ReceiptPrinter printer;
         Bank bank;
 
         private ChipAndPinCard CurrentATMCard;
 
-        public AutomatedTellerMachine(IScreen _screen)
+
+        //public AutomatedTellerMachine(IScreen _screen)
+        //{
+        //    screen = _screen;
+        //}
+
+        public AutomatedTellerMachine(IScreen _screen, IKeypad _keypad)
         {
             screen = _screen;
+            keypad = _keypad;
         }
 
 
@@ -40,6 +48,20 @@ namespace ATM.Domain
            
         }
 
+
+        public ChipAndPinCard GetCardByCardNo(string _cardNo)
+        {
+            try
+            {
+                return CardManagementSystem.getCardByNo(_cardNo);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         public bool Authenticate(string PIN)
         {
             try
@@ -55,26 +77,5 @@ namespace ATM.Domain
             
         }
     }
-
-
-    public static class KeyPad
-    {
-        //public static const int[] keys = {0,1,2,3,4,5,6,7,8,9};
-
-        public static DirectionKey DirectionKey;
-    }
-
-
-    public enum DirectionKey
-    {
-        Enter,
-        Clear,
-        Cancel,
-        Right,
-        Left,
-        Up,
-        Down
-    }
-
    
 }

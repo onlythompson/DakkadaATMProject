@@ -56,5 +56,26 @@ namespace ATM.Domain
         }
 
 
+
+        public static ChipAndPinCard getCardByNo(string _cardNo)
+        {
+            InitCardSystem();  
+
+            for (var i = 0; i < cards.Length; i++)
+            {
+                if (cards[i].CardNo.Equals(_cardNo))
+                {
+                    return new ChipAndPinCard
+                    {
+                        NameOnCard = cards[i].NameOnCard,
+                        Bank_Name = cards[i].Bank_Name,
+                        CardNo = cards[i].CardNo,
+                        ExpiryDate = cards[i].ExpiryDate
+                    };
+                }
+            }
+
+            return null;
+        }
     }
 }
