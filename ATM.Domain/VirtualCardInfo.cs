@@ -28,5 +28,7 @@ namespace ATM.Domain
 
 
         public string  PIN { get; set; }
+
+        public string LinkedAccount { get; set; }
     }
 }

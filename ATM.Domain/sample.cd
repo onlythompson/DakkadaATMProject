@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ATM.Domain.Account" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAEAAAAAAAAAAAAAAAIAABAAAAAgCQAAAAAAAAAA=</HashCode>
+      <FileName>Account.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ATM.Domain.AutomatedTellerMachine" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAQAEAEAAEAAAAAAAAIA4AAAAQAgAACAAAAAUAAAE=</HashCode>
+      <FileName>AutomatedTellerMachine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ATM.Domain.Bank" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAABIIAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Bank.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ATM.Domain.CardManagementSystem" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAIAQAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>CardManagementSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ATM.Domain.CardReader" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CardReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ATM.Domain.CashDispenser" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CashDispenser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ATM.Domain.ChipAndPinCard" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAkCAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAgAAA=</HashCode>
+      <FileName>ChipAndPinCard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ATM.Domain.Customer" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAACAAAAAAAQABAAAABACQAAAIAAAAAA=</HashCode>
+      <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ATM.Domain.ReceiptPrinter" Collapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReceiptPrinter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ATM.Domain.Transaction" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ATM.Domain.VirtualCardInfo" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAkCAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAACgAAA=</HashCode>
+      <FileName>VirtualCardInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ATM.Domain.WithdrawalTransaction" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WithdrawalTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ATM.Domain.IKeypad" Collapsed="true">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IKeypad.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ATM.Domain.IScreen">
+    <Position X="9.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>IScreen.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="ATM.Domain.AccountType" Collapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Account.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ATM.Domain.ATMTransactionType" Collapsed="true">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>AutomatedTellerMachine.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ATM.Domain.Gender" Collapsed="true">
+    <Position X="6.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

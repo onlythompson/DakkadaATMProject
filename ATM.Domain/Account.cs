@@ -12,6 +12,10 @@ namespace ATM.Domain
         public string BVN { get; set; }
         public AccountType TypeofAccount { get; set; }
         public decimal AccountBalance { get; set; }
+        public string FirstName { get; set; }
+        public string Surname { get; set; }
+        public string Address { get; set; }
+        public decimal TransactionLimit { get; set; }
 
     }
 

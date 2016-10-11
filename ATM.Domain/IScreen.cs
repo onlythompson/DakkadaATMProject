@@ -10,6 +10,6 @@ namespace ATM.Domain
     {
         void Display(string info);
         void Wait();
-       
+        void Clear();
     }
 }

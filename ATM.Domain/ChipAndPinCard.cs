@@ -23,5 +23,7 @@ namespace ATM.Domain
 
             return true;
         }
+
+        public string LinkedAccount { get; set; }
     }
 }

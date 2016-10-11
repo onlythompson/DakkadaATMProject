@@ -48,11 +48,17 @@
     <Compile Include="CashDispenser.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="IKeypad.cs" />
+    <Compile Include="Transaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IScreen.cs" />
     <Compile Include="ReceiptPrinter.cs" />
     <Compile Include="VirtualCardInfo.cs" />
+    <Compile Include="WithdrawalTransaction.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="sample.cd" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
