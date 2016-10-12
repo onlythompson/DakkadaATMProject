@@ -34,17 +34,17 @@ namespace ATM.Domain
         }
 
 
-        public void SaveCardInMemory(ChipAndPinCard card)
+        private void SaveCardInMemory(ChipAndPinCard card)
         {
             CurrentATMCard = card;
         }
 
 
-        public bool ReadCard(ChipAndPinCard card)
+        public void ProcessCardInCardReader(string _cardNo)
         {
             try
             {
-                return CardReader.IsValidCard(card);
+                SaveCardInMemory(CardReader.ProcessCard(_cardNo));
             }
             catch (Exception)
             {
@@ -67,10 +67,33 @@ namespace ATM.Domain
                 throw;
             }
         }
-        public bool Authenticate(string PIN)
+
+        public ChipAndPinCard GetCurrentCard()
+        {
+            if (CurrentATMCard != null)
+            {
+                return this.CurrentATMCard;
+            }
+            throw new InvalidOperationException("ATM found no card");
+        }
+
+
+        public void DisplayAfterCardReadingProcessingMessage()
+        {
+            this.screen.Display("------------Your Card Has Been Validated !!!----------");
+
+            this.screen.Display(String.Format("Welcome {0}", this.CurrentATMCard.NameOnCard));
+
+            
+        }
+        public bool AuthenticateCard(string PIN)
         {
             try
             {
+
+                this.screen.Display("Enter PIN : ");
+                int enteredPin = this.keypad.getNumberInput();
+
                 return CardManagementSystem.validateCardPIN(CurrentATMCard, PIN);
 
             }
@@ -92,7 +115,7 @@ namespace ATM.Domain
                     return ATMTransactionType.WITHDRAWAL;
                 case 3:
                     return ATMTransactionType.CHECK_BALANCE;
-              
+
                 default:
                     throw new InvalidOperationException("Choose a valid transaction type");
 
@@ -104,7 +127,7 @@ namespace ATM.Domain
         {
             switch (type)
             {
-               
+
                 case ATMTransactionType.WITHDRAWAL:
                     performATMWithdrawal();
                     break;
@@ -125,7 +148,7 @@ namespace ATM.Domain
 
             this.screen.Display("***********Enter Transaction Amount :**************");
             currentTrans.Amount = this.keypad.getNumberInput();
-            
+
 
             if (bank.processAccountWithdrawal(this.CurrentATMCard.LinkedAccount, currentTrans))
             {
@@ -146,7 +169,7 @@ namespace ATM.Domain
             //screen.Clear();
 
             ShowPossibleTransactions();
-           
+
         }
 
         public void ShowPossibleTransactions()

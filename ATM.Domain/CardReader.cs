@@ -12,13 +12,24 @@ namespace ATM.Domain
         //    return IsValideCard(card);
         //}
 
+        public static ChipAndPinCard ProcessCard(string _cardNo)
+        {
+            if (!String.IsNullOrEmpty(_cardNo))
+            {
+                var card = CardManagementSystem.getCardByNo(_cardNo);
+                if (IsValidCard(card))
+                {
+                    return card;
+                }
+
+
+            }
+            throw new InvalidOperationException("No valid card no for processing");
+        }
+
         public static bool IsValidCard(ChipAndPinCard card)
         {
-            if (String.IsNullOrEmpty(card.NameOnCard) && String.IsNullOrEmpty(card.CardNo))
-            {
-                return false;
-            }
-
+           
             if (card.HasExpired())
             {
                 return false;

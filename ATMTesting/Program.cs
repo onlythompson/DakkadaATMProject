@@ -28,11 +28,8 @@ namespace ATMTesting
                 //Captures and Stores whatever the user enters as Card No
                 var cardNo = atm.keypad.getStringInput();
 
-
-                //Based on the Entry in Line 29
-                //The system retrieves the card object base on the entered card no 
-                var currentCard = atm.GetCardByCardNo(cardNo);
-
+                //System validates the card and save its details in memory
+                atm.ProcessCardInCardReader(cardNo);
 
                 //Check if a valid card was retrieve, then proceed with the instr within the if statement
                 if (currentCard != null)
@@ -42,15 +39,7 @@ namespace ATMTesting
                     {
                         atm.SaveCardInMemory(currentCard);
 
-                        atm.screen.Display("------------Your Card Has Been Validated !!!----------");
-
-                        atm.screen.Display(String.Format("Welcome {0}", currentCard.NameOnCard));
-
-                        atm.screen.Display("    Enter PIN : ");
-
-                        //Get Pin from User
-
-                        int enteredPin = atm.keypad.getNumberInput();
+                        
 
                         ////Authenticate PIN
 

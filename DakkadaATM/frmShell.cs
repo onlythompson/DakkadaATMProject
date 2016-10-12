@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DakkadaATM.Bank;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,16 +26,18 @@ namespace DakkadaATM
         private void button1_Click(object sender, EventArgs e)
         {
 
-            var cardNo = txtCardNo.Text;
-            var pin = txtPin.Text;
-            string message = String.Format("Confirm that this is the Card No you entered is: {0}", cardNo);
-
-            MessageBox.Show(message, "Validate Entry", MessageBoxButtons.YesNo);
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnbs_Click(object sender, EventArgs e)
+        {
+            frmBankShell frm = new frmBankShell();
+            frm.ShowDialog();
         }
     }
 }

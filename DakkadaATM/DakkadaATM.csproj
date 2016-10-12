@@ -44,14 +44,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bank\frmBankShell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bank\frmBankShell.Designer.cs">
+      <DependentUpon>frmBankShell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bank\frmNewAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bank\frmNewAccount.Designer.cs">
+      <DependentUpon>frmNewAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmShell.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmShell.Designer.cs">
       <DependentUpon>frmShell.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageProcessingEngine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Bank\frmBankShell.resx">
+      <DependentUpon>frmBankShell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bank\frmNewAccount.resx">
+      <DependentUpon>frmNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmShell.resx">
       <DependentUpon>frmShell.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +95,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ATM.Application\ATM.Application.csproj">
+      <Project>{105bdab5-376e-4c6d-af99-7fa95e19c13d}</Project>
+      <Name>ATM.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ATM.Domain\ATM.Domain.csproj">
+      <Project>{43627c06-a435-4a79-862d-e0efad36fa04}</Project>
+      <Name>ATM.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
