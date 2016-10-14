@@ -17,13 +17,22 @@ namespace DakkadaATM.Bank
     {
 
         AccountSystem _accountSystem;
+
+        Account _account;
+
         public frmNewAccount()
         {
             InitializeComponent();
 
             _accountSystem = new AccountSystem();
 
+            initAccount();
 
+        }
+
+        void initAccount()
+        {
+            _account = new Account();
         }
 
         private void pbPassport_Click(object sender, EventArgs e)
@@ -41,8 +50,8 @@ namespace DakkadaATM.Bank
                 if (ofdPhotoSelector.ShowDialog() == DialogResult.OK)
                 {
 
-                    var Photo = new ImageProcessingEngine().getResizedImage(ofdPhotoSelector.FileName, 150, 150);
-                    MemoryStream stream = new MemoryStream(Photo);
+                    _account.Passport = new ImageProcessingEngine().getResizedImage(ofdPhotoSelector.FileName, 150, 150);
+                    MemoryStream stream = new MemoryStream(_account.Passport);
                     this.pbPassport.Image = Image.FromStream(stream);
                     //txtFileName.Text = PictureSelector.FileName;
 
@@ -68,8 +77,8 @@ namespace DakkadaATM.Bank
                 if (ofdPhotoSelector.ShowDialog() == DialogResult.OK)
                 {
 
-                    var signature = new ImageProcessingEngine().getResizedImage(ofdPhotoSelector.FileName, 70, 70);
-                    MemoryStream stream = new MemoryStream(signature);
+                   _account.Signature = new ImageProcessingEngine().getResizedImage(ofdPhotoSelector.FileName, 70, 70);
+                    MemoryStream stream = new MemoryStream(_account.Signature);
                     this.pbSignature.Image = Image.FromStream(stream);
                     //txtFileName.Text = PictureSelector.FileName;
 
@@ -107,6 +116,26 @@ namespace DakkadaATM.Bank
 
         bool ValidateEntry()
         {
+            assignValues();
+
+            if(String.IsNullOrEmpty(_account.FirstName) && String.IsNullOrEmpty(_account.Surname)){
+                return false;
+                }
+
+            if (String.IsNullOrEmpty(_account.AccountNos) && String.IsNullOrEmpty(_account.BVN))
+            {
+                return false;
+            }
+
+            if (_account.Passport == null && _account.Signature == null)
+            {
+                return false;
+            }
+
+            if (_account.StateOfOrigin == null && (int)_account.Gender == 0)
+            {
+                return false;
+            }
             return true;
         }
 
@@ -115,17 +144,40 @@ namespace DakkadaATM.Bank
         {
             if (ValidateEntry())
             {
-                var account = new Account();
-                account.FirstName = txtFirstName.Text;
-                account.Surname = txtSurname.Text;
-                account.Address = txtAddess.Text;
-                account.BVN = txtBVN.Text;
-                account.TypeofAccount = getAccountType();
-
-
-                _accountSystem.SaveAccount(account);
+                
+                _accountSystem.SaveAccount(_account);
 
                 
+            }
+        }
+
+        private void assignValues()
+        {
+            _account.FirstName = txtFirstName.Text;
+            _account.Surname = txtSurname.Text;
+            _account.Address = txtAddess.Text;
+            _account.BVN = txtBVN.Text;
+            _account.TypeofAccount = getAccountType();
+
+            _account.Gender = getGender();
+
+            _account.AccountNos = txtAccountNos.Text;
+            _account.BirthDate = dtpDoB.Value.Date;
+
+            _account.StateOfOrigin = ((State)cmbState.SelectedItem).Code;
+            _account.Height = Convert.ToDouble(txtHeight.Value);
+
+        }
+
+        private Gender getGender()
+        {
+            if (rdbMale.Checked)
+            {
+                return Gender.Male;
+            }
+            else
+            {
+                return Gender.Female;
             }
         }
 
