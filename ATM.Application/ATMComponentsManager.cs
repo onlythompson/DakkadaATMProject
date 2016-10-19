@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace ATM.Application
 {
-    public class AccountSystem
+    class ATMComponentsManager
     {
-
-        public void SaveAccount(Domain.Account account)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

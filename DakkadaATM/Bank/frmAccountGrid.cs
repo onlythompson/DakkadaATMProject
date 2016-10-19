@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace DakkadaATM.Bank
 {
-    public partial class frmNewAccount : Form
+    public partial class frmAccountGrid : Form
     {
 
         //AccountSystem _accountSystem;
@@ -21,7 +21,7 @@ namespace DakkadaATM.Bank
         Account _account;
 
         IList<Account> AccountList;
-        public frmNewAccount()
+        public frmAccountGrid()
         {
             InitializeComponent();
 
@@ -146,31 +146,13 @@ namespace DakkadaATM.Bank
         void SaveEntry()
         {
             if (ValidateEntry())
-            {      
+            {
+                
                 //_accountSystem.SaveAccount(_account);
-                //Add the current account to the list of accounts
                 AccountList.Add(_account);
 
-
-                //Initialize the account vairable to null;
-                ResetControls();
-
-                MessageBox.Show("You have successfully created an account");
-
+                
             }
-        }
-
-        private void ResetControls()
-        {
-            _account = new Account();
-
-            txtFirstName.Clear();
-            txtSurname.Clear();
-            txtAddess.Clear();
-            txtBVN.Clear();
-            txtHeight.Value = 0;
-            pbPassport.Image = null;
-            pbSignature.Image = null;
         }
 
         private void assignValues()
@@ -222,14 +204,7 @@ namespace DakkadaATM.Bank
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-           
             SaveEntry();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmAccountList frm = new frmAccountList(AccountList);
-            frm.ShowDialog();
         }
     }
 }

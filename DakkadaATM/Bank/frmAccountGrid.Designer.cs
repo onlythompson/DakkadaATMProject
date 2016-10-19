@@ -1,6 +1,6 @@
 ﻿namespace DakkadaATM.Bank
 {
-    partial class frmNewAccount
+    partial class frmAccountGrid
     {
         /// <summary>
         /// Required designer variable.
@@ -63,7 +63,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.ofdPhotoSelector = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.dgvAccounts = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtHeight)).BeginInit();
@@ -75,6 +76,8 @@
             this.groupBox3.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -82,17 +85,19 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox6, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox6, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox8, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.78261F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.21739F));
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 185F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.56178F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.43823F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(823, 522);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(958, 660);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox1
@@ -116,9 +121,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(3, 188);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(817, 292);
+            this.groupBox1.Size = new System.Drawing.Size(952, 290);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal Information";
@@ -321,9 +326,9 @@
             this.groupBox3.Controls.Add(this.txtBVN);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(3, 301);
+            this.groupBox3.Location = new System.Drawing.Point(3, 484);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(817, 156);
+            this.groupBox3.Size = new System.Drawing.Size(952, 111);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Account Information";
@@ -396,20 +401,19 @@
             // groupBox6
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox6, 2);
-            this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Controls.Add(this.btnSave);
             this.groupBox6.Controls.Add(this.btnCancel);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox6.Location = new System.Drawing.Point(3, 463);
+            this.groupBox6.Location = new System.Drawing.Point(3, 601);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(817, 56);
+            this.groupBox6.Size = new System.Drawing.Size(952, 56);
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             // 
             // btnSave
             // 
             this.btnSave.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSave.Location = new System.Drawing.Point(580, 18);
+            this.btnSave.Location = new System.Drawing.Point(715, 18);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(125, 35);
             this.btnSave.TabIndex = 1;
@@ -420,7 +424,7 @@
             // btnCancel
             // 
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCancel.Location = new System.Drawing.Point(705, 18);
+            this.btnCancel.Location = new System.Drawing.Point(840, 18);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 35);
             this.btnCancel.TabIndex = 0;
@@ -431,23 +435,35 @@
             // 
             this.ofdPhotoSelector.FileName = "openFileDialog1";
             // 
-            // button1
+            // groupBox8
             // 
-            this.button1.Location = new System.Drawing.Point(282, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(213, 30);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "All Accounts";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.tableLayoutPanel1.SetColumnSpan(this.groupBox8, 2);
+            this.groupBox8.Controls.Add(this.dgvAccounts);
+            this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox8.Location = new System.Drawing.Point(3, 3);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(952, 179);
+            this.groupBox8.TabIndex = 3;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Accounts";
             // 
-            // frmNewAccount
+            // dgvAccounts
+            // 
+            this.dgvAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAccounts.Location = new System.Drawing.Point(3, 18);
+            this.dgvAccounts.Name = "dgvAccounts";
+            this.dgvAccounts.RowTemplate.Height = 24;
+            this.dgvAccounts.Size = new System.Drawing.Size(946, 158);
+            this.dgvAccounts.TabIndex = 0;
+            // 
+            // frmAccountGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 522);
+            this.ClientSize = new System.Drawing.Size(958, 660);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "frmNewAccount";
+            this.Name = "frmAccountGrid";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Account Entry";
             this.Load += new System.EventHandler(this.frmNewAccount_Load);
@@ -466,6 +482,8 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -507,6 +525,7 @@
         private System.Windows.Forms.RadioButton rdbSavings;
         private System.Windows.Forms.TextBox txtAccountNos;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.DataGridView dgvAccounts;
     }
 }

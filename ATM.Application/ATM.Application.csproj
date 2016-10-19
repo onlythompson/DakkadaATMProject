@@ -39,8 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountSystem.cs" />
+    <Compile Include="AccountApplication.cs" />
+    <Compile Include="ATMComponentsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ATM.Domain\ATM.Domain.csproj">

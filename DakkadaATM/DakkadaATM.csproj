@@ -44,11 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bank\frmAccountList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bank\frmAccountList.Designer.cs">
+      <DependentUpon>frmAccountList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bank\frmBankShell.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bank\frmBankShell.Designer.cs">
       <DependentUpon>frmBankShell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bank\frmAccountGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bank\frmAccountGrid.Designer.cs">
+      <DependentUpon>frmAccountGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Bank\frmNewAccount.cs">
       <SubType>Form</SubType>
@@ -65,8 +77,14 @@
     <Compile Include="ImageProcessingEngine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Bank\frmAccountList.resx">
+      <DependentUpon>frmAccountList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bank\frmBankShell.resx">
       <DependentUpon>frmBankShell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bank\frmAccountGrid.resx">
+      <DependentUpon>frmAccountGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bank\frmNewAccount.resx">
       <DependentUpon>frmNewAccount.cs</DependentUpon>
