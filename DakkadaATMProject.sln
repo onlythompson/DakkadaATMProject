@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATMTesting", "ATMTesting\AT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM.Application", "ATM.Application\ATM.Application.csproj", "{105BDAB5-376E-4C6D-AF99-7FA95E19C13D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.Domain", "Bank.Domain\Bank.Domain.csproj", "{0E8896C0-42F5-4773-B8A8-6166CDE22CCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{105BDAB5-376E-4C6D-AF99-7FA95E19C13D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{105BDAB5-376E-4C6D-AF99-7FA95E19C13D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{105BDAB5-376E-4C6D-AF99-7FA95E19C13D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E8896C0-42F5-4773-B8A8-6166CDE22CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E8896C0-42F5-4773-B8A8-6166CDE22CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E8896C0-42F5-4773-B8A8-6166CDE22CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E8896C0-42F5-4773-B8A8-6166CDE22CCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
